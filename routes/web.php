@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FruitsController;
+use App\Http\Controllers\LegumesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FruitsController::class,'index'])->name('fruits');
+Route::get('/legumes', [LegumesController::class,'index'])->name('légumes');
