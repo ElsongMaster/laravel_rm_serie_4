@@ -1,3 +1,4 @@
+
 @extends('template.main')
 
 
@@ -13,12 +14,20 @@
   </thead>
   <tbody>
       @foreach ($datas as $data)
-          
-      <tr>
+        @if (strlen($data->name)>=5)
+                <tr class="bg-primary text-light">
         <th scope="row">{{$data->id}}</th>
         <td>{{$data->name}}</td>
         <td>{{$data->quantite}} Kg</td>
-      </tr>
+      </tr>  
+        @else
+                <tr>
+        <th scope="row">{{$data->id}}</th>
+        <td>{{$data->name}}</td>
+        <td>{{$data->quantite}} Kg</td>
+      </tr>          
+        @endif
+
       @endforeach
 
   </tbody>
