@@ -12,4 +12,10 @@ class FruitsController extends Controller
             $datas = Fruit::all();
         return view('pages.fruits',compact('datas'));
     }
+
+
+    public function show(Fruit $id){
+        $fruit = $id;
+        return view('layouts.showFruit',compact('fruit'));
+    }
 }

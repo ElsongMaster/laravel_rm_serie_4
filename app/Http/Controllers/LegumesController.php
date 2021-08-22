@@ -12,4 +12,10 @@ class LegumesController extends Controller
         $datas = Legume::all();
         return view('pages.legumes',compact('datas'));
     }
+
+    public function show(Legume $id){
+        $legume = $id;
+
+        return view('layouts.showLegume',compact('legume'));
+    }
 }

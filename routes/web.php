@@ -15,4 +15,6 @@ use App\Http\Controllers\LegumesController;
 */
 
 Route::get('/', [FruitsController::class,'index'])->name('fruits');
+Route::get('/fruits/{id}/show', [FruitsController::class,'show'])->name('showFruit');
+Route::get('/legumes/{id}/show', [LegumesController::class,'show'])->name('showLegume');
 Route::get('/legumes', [LegumesController::class,'index'])->name('légumes');
